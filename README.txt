@@ -6,7 +6,7 @@ This repository contains code and resources to reproduce the experiments present
 ## Dependencies
 
 1. **Install PyTorch:**
-   Make sure you have PyTorch installed. You can follow the installation guide [here](https://pytorch.org/get-started/locally/).
+   Make sure you have PyTorch installed. You can follow the installation guide from (https://pytorch.org/get-started/locally/).
 
 2. **Install Required Packages:**
    After installing PyTorch, install the remaining dependencies using the provided `requirements.txt` file. Run the following command in your terminal:
