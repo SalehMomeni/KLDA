@@ -63,12 +63,11 @@ def save_results(dataset_name, model_name, seed, accuracy):
     results_dir = os.path.join("results", dataset_name)
     os.makedirs(results_dir, exist_ok=True)
 
-    results_file = os.path.join(results_dir, f"{model_name}.txt")
+    file_name = model_name.replace("/", "-")
+    results_file = os.path.join(results_dir, f"{file_name}.txt")
 
     with open(results_file, "a") as file:
         file.write(f"Seed: {seed}, Accuracy: {accuracy:.4f}\n")
-
-    print(f"Results saved in {results_file}")
 
 def main(args):
     """
