@@ -1,7 +1,7 @@
 
 Welcome to the KLDA Model Repository!
 
-This repository contains code and resources to reproduce the experiments from our AAAI 2025 paper, "Achieving Joint Training Accuracy in Continual Learning". Follow the instructions below to set up the environment.
+This repository contains code and resources to reproduce the experiments from our AAAI 2025 paper, "Continual Learning Using a Kernel-Based Method Over Foundation Models". Follow the instructions below to set up the environment.
 
 ## Dependencies
 
@@ -61,6 +61,3 @@ If you find this work useful, please consider citing:
   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
   year={2025}
 }
-
-
-
