@@ -47,7 +47,7 @@ python3 evaluate.py CLINC --D 5000 --sigma 1e-4 --num_ensembles 5 --seed 0 --mod
 
 For each model, it is essential to use the appropriate sigma value, as the performance of the model can be sensitive to this parameter. Below are the sigma values we used for our experiments: Paraphrase-MiniLM: 1e-2, BART-base: 1e-4, BERT-base: 5e-3, RoBERTa-large: 5e-3, T5-3b: 5e-2, and Mistral-7B: 5e-6.
 
-This command will train the classifier on the CLINC dataset and logs the accuracy in the corresponding results file.
+This command trains the classifier on the CLINC dataset and logs the accuracy in the corresponding results file.
 
 Happy experimenting!
 
