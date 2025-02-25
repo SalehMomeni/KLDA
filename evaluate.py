@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import warnings
 import torch
@@ -25,7 +26,6 @@ def load_data_from_csv(train_filename, test_filename):
     """
     train_df = pd.read_csv(train_filename)
     test_df = pd.read_csv(test_filename)
-
     return train_df, test_df
 
 def compute_accuracy(model, test_df):
@@ -51,6 +51,25 @@ def compute_accuracy(model, test_df):
     accuracy = correct_predictions / total_predictions
     return accuracy
 
+def save_results(dataset_name, model_name, seed, accuracy):
+    """
+    Saves the accuracy results into a structured file format.
+    Args:
+        dataset_name (str): Name of the dataset used.
+        model_name (str): Name of the model used.
+        seed (int): Random seed used.
+        accuracy (float): Computed accuracy to be stored.
+    """
+    results_dir = os.path.join("results", dataset_name)
+    os.makedirs(results_dir, exist_ok=True)
+
+    results_file = os.path.join(results_dir, f"{model_name}.txt")
+
+    with open(results_file, "a") as file:
+        file.write(f"Seed: {seed}, Accuracy: {accuracy:.4f}\n")
+
+    print(f"Results saved in {results_file}")
+
 def main(args):
     """
     Main function to execute the evaluation of the classifier.
@@ -70,8 +89,7 @@ def main(args):
     model.fit(train_df)
 
     accuracy = compute_accuracy(model, test_df)
-
-    print(f"Accuracy on the {dataset_name} dataset: {accuracy * 100:.2f}%")
+    save_results(dataset_name, args.model_name, args.seed, accuracy)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
